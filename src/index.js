@@ -72,7 +72,7 @@ const resetMessage = (textElement, inputElement) => {
     inputElement.classList.remove('border-red-600')
 }
 
-const useValidationHander = (target, msgTarget) => {
+const useValidationHandler = (target, msgTarget) => {
     const isValid = isValidate(target)
 
     if (isValid !== true) printErrorMessage(msgTarget, target, isValid)
@@ -83,15 +83,15 @@ const useValidationHander = (target, msgTarget) => {
 }
 
 const isAllRequirementSatisfy = () =>
-    useValidationHander($idInput, $idMsg) === true &&
-    useValidationHander($pwInput, $pwMsg) === true &&
-    useValidationHander($pwCheckInput, $pwCheckMsg) === true
+    useValidationHandler($idInput, $idMsg) === true &&
+    useValidationHandler($pwInput, $pwMsg) === true &&
+    useValidationHandler($pwCheckInput, $pwCheckMsg) === true
 
 // handler
-$idInput.addEventListener('blur', () => useValidationHander($idInput, $idMsg))
-$pwInput.addEventListener('blur', () => useValidationHander($pwInput, $pwMsg))
+$idInput.addEventListener('blur', () => useValidationHandler($idInput, $idMsg))
+$pwInput.addEventListener('blur', () => useValidationHandler($pwInput, $pwMsg))
 $pwCheckInput.addEventListener('blur', () =>
-    useValidationHander($pwCheckInput, $pwCheckMsg)
+    useValidationHandler($pwCheckInput, $pwCheckMsg)
 )
 $form.addEventListener('submit', handleFormSubmit)
 $cancelBtn.addEventListener('click', handleCancelBtnClick)
